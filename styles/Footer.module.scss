@@ -1,0 +1,66 @@
+@import './vars.scss';
+
+.footer {
+    border-top: solid 2px $border-col;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+.foot {
+    background: $back-col;
+    width: 33.33%;
+    padding: 3%;
+}
+.foot h3 {
+    font-size: x-large;
+    background: $back-col;
+    color: $prime-col;
+    border-radius: 3%;
+    text-align: left;
+    margin: 20px 0 0 25px;
+}
+.foot p {
+    text-align: left;
+    background: $back-col;
+    color: $prime-col;
+    padding: 5% 2%;
+    border-radius: 3%;
+}
+.foot li a {
+    text-decoration: none;
+    color: $prime-col;
+    background: $back-col;
+    padding: 3px 6px;
+    border-radius: 2px;
+    transition: $ease;
+}
+.foot li a:hover {
+    color: $back-col;
+    background: $prime-col;
+    font-weight: bold;
+}
+.foot .ul,
+.li {
+    background: $back-col;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    list-style: none;
+}
+
+@media (max-width: 960px) {
+    .footer {
+        display: flex;
+        flex-direction: column;
+    }
+    .foot {
+        width: 100%;
+        padding: 0;
+        font-size: 17px;
+    }
+    .foot ul li {
+        display: inline-block;
+        padding: 10px;
+        margin: 0 5px;
+    }
+}
