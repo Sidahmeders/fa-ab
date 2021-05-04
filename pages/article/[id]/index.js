@@ -13,7 +13,7 @@ export default function article({ article }) {
     )
 }
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async () => {
     const response = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=6') //fetch(`${server}/api/articles/${params.id}`)
     const article = await response.json()
     return {
