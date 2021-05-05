@@ -1,6 +1,9 @@
 @import './vars.scss';
 
 .navbar {
+    ::selection {
+        background-color: transparent;
+    }
     position: fixed;
     display: flex;
     z-index: 99;
