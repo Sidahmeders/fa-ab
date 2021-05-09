@@ -3,15 +3,13 @@ import Image from 'next/image'
 import { useState } from 'react'
 
 export default function DonorInfo() {
+    // set the person info and pass them to the stripe create customer
     const [donorInfo, setDonorInfo] = useState({
         first_name: '',
         last_name: '',
         email: '',
         phone_number: ''
     })
-
-    // set the person info and pass them to the stripe create customer
-    console.log(donorInfo)
 
     return (
         <div className={commonStyles.donation_container}>

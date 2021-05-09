@@ -50,7 +50,6 @@ const CheckoutForm = ({ paymentIntent }) => {
             }
 
             if (payment.paymentIntent.status === 'succeeded') {
-                console.log(paymentIntent)
                 setCheckoutSuccess(true)
                 destroyCookie(null, 'paymentIntentId')
             }

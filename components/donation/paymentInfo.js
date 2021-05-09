@@ -3,15 +3,13 @@ import Image from 'next/image'
 import { useState } from 'react'
 
 export default function PaymentInfo() {
+    // pass the payment info to the stripe payment intent and customer
     const [paymentInfo, setPaymentInfo] = useState({
         street_address: '',
         address_line2: '',
         city: '',
         state: ''
     })
-
-    // pass the payment info to the stripe payment intent and customer
-    console.log(paymentInfo)
 
     return (
         <div className={commonStyles.donation_container}>

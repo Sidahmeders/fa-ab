@@ -11,7 +11,7 @@ let pageSizeNumber = 4
 let totalResultsSize
 
 export default function index({ home }) {
-    // const { background_image, about, team_quote, team_image, featured_video } = home.data
+    const { background_image, about, team_quote, team_image, featured_video } = home.data
     const context = useContext(ContextConsumer)
     const { pageNumber, setPageNumber } = context
 

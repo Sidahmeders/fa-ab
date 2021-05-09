@@ -4,6 +4,8 @@ import Image from 'next/image'
 import { useState } from 'react'
 
 export default function DonationInfo() {
+    // you can set this values on the context or else where when
+    // you can access then in the stripe paymentInten and customer creation
     const [donationAmount, setDonationAmount] = useState(undefined)
     const [donationMethod, setDonationMethod] = useState(undefined)
     const [otherAmount, setOtherAmount] = useState(false)
@@ -85,10 +87,6 @@ export default function DonationInfo() {
         })
         setDonationMethodButtons(() => updatedButtons)
     }
-
-    // you can set this values on the context or else where when
-    // you can access then in the stripe paymentInten and customer creation
-    console.log(donationAmount, donationMethod)
 
     return (
         <div className={commonStyles.donation_container}>
