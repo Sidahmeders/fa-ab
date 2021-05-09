@@ -1,7 +1,7 @@
 @import './vars.scss';
 
 .footer {
-    border-top: solid 2px $border-col;
+    box-shadow: 2px 2px 10px $border-col;
     width: 100%;
     height: auto;
     display: flex;

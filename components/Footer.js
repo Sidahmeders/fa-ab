@@ -1,10 +1,10 @@
-import footerStyles from '../styles/Footer.module.scss'
+import styles from '../styles/Footer.module.scss'
 
 const Footer = () => {
     return (
         <div>
-            <footer className={footerStyles.footer}>
-                <section className={footerStyles.foot}>
+            <footer className={styles.footer}>
+                <section className={styles.foot}>
                     <h3>Community Foundation</h3>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis,
@@ -20,34 +20,34 @@ const Footer = () => {
                     </p>
                 </section>
 
-                <section className={footerStyles.foot}>
+                <section className={styles.foot}>
                     <h3>Join The Community</h3>
-                    <ul className={footerStyles.ul}>
-                        <li className={footerStyles.li}>
+                    <ul className={styles.ul}>
+                        <li className={styles.li}>
                             <a href="#">Community1</a>
                         </li>
-                        <li className={footerStyles.li}>
+                        <li className={styles.li}>
                             <a href="#">Community2</a>
                         </li>
-                        <li className={footerStyles.li}>
+                        <li className={styles.li}>
                             <a href="#">Community3</a>
                         </li>
-                        <li className={footerStyles.li}>
+                        <li className={styles.li}>
                             <a href="#">Community4</a>
                         </li>
-                        <li className={footerStyles.li}>
+                        <li className={styles.li}>
                             <a href="#">Other Communities</a>
                         </li>
-                        <li className={footerStyles.li}>
+                        <li className={styles.li}>
                             <a href="#">Community6</a>
                         </li>
-                        <li className={footerStyles.li}>
+                        <li className={styles.li}>
                             <a href="#">Other Communities</a>
                         </li>
                     </ul>
                 </section>
 
-                <section className={footerStyles.foot}>
+                <section className={styles.foot}>
                     <h3>Follow Us On</h3>
                     <span>
                         <a href="#">

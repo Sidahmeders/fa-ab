@@ -1,5 +1,12 @@
+@import './vars.scss';
+
 .container {
-    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.blogs {
     margin: 50px 20px;
     display: flex;
     justify-content: center;
@@ -7,6 +14,7 @@
     text-align: center;
 
     .blog {
+        min-height: 50vh;
         background-color: white;
         border: 2px solid rgb(245, 245, 245);
         box-shadow: 2px 2px 3px rgb(202, 202, 202);
@@ -41,6 +49,27 @@
     width: 200px;
     padding: 20px;
 }
+
+.pagination {
+    font-size: 27px;
+    display: block;
+    a {
+        text-decoration: none;
+        color: blue;
+        margin: 0 4px;
+        transition: $ease;
+        padding: 10px;
+        &.highlight {
+            color: rgb(255, 0, 0);
+            text-shadow: 2px 2px 10px rgb(255, 0, 0);
+        }
+        &:hover {
+            color: red;
+            cursor: pointer;
+        }
+    }
+}
+
 .youtube iframe {
     width: 70vw;
     height: 35vw;

@@ -1,0 +1,108 @@
+.header {
+    font-size: 1.8em;
+    font-weight: 100;
+    text-align: center;
+    text-shadow: 0 0 40px rgb(102, 255, 0);
+    margin: 0 5vw;
+    margin-bottom: 50px;
+    padding: 20px;
+    border-radius: 5px;
+    word-spacing: 5px;
+}
+
+.amounts_container {
+    .amount_btn {
+        display: flex;
+        button {
+            color: rgb(65, 65, 65);
+            border: none;
+            font-size: 18px;
+            width: 100px;
+            padding: 10px 0;
+            border-radius: 2px;
+            background-color: rgb(223, 223, 223);
+            margin: 20px;
+            text-align: center;
+            transition: 0.5s ease;
+            outline: none;
+            &:hover {
+                cursor: pointer;
+                color: rgb(98, 196, 6);
+            }
+            &.focused_amount {
+                background-color: rgb(98, 196, 6);
+                color: white;
+            }
+        }
+    }
+    .input_amount {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        input {
+            font-size: 18px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(68, 68, 68);
+            padding: 10px;
+            border: 2px solid rgba(150, 150, 150, 0.1);
+            border-radius: 5px;
+            width: 200px;
+            &:focus {
+                outline: none;
+            }
+        }
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        /* Firefox */
+        input[type='number'] {
+            -moz-appearance: textfield;
+        }
+    }
+}
+
+.wrapper {
+    display: flex;
+    height: 100px;
+    width: 100%;
+    padding: 20px 15px;
+
+    .option {
+        background: #fff;
+        height: 100%;
+        width: 220px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        margin: 0 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        padding: 0 10px;
+        border: 2px solid rgb(240, 240, 240);
+
+        &.focused_method {
+            background-color: rgb(98, 196, 6);
+            border: none;
+            span {
+                color: white;
+            }
+            .dot {
+                background-color: rgb(226, 130, 130);
+            }
+        }
+
+        span {
+            color: rgb(80, 80, 80);
+        }
+        .dot {
+            height: 20px;
+            width: 20px;
+            background: rgb(221, 221, 221);
+            border-radius: 50%;
+            position: relative;
+        }
+    }
+}

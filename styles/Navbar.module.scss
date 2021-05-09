@@ -19,7 +19,7 @@
     font-size: 1.3em;
     transition: $ease;
     &.show {
-        border-bottom-color: $border-col;
+        box-shadow: 2px 2px 5px $border-col;
         ul li {
             a {
                 color: $second-col;
@@ -230,7 +230,7 @@
         height: 100vh;
         flex-direction: column;
         justify-content: flex-start;
-        border-left: 2px solid $border-col;
+        box-shadow: 2px 2px 5px $border-col;
         left: 100%;
         &.on {
             left: 50%;

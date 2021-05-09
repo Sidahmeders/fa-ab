@@ -67,13 +67,7 @@ export function NavBar() {
                         <NavItem href="/covid" text="| Covid" />
                         <NavItem href="/blogs" text="| Blogs" />
                         <NavItem href="/contact-us" text="| Contact Us" />
-                        <li>
-                            <a
-                                target="_blank"
-                                href="https://www.redcross.org/donate/donation.html/">
-                                | Donate
-                            </a>
-                        </li>
+                        <NavItem href="/donate" text="| Donate" />
                     </ul>
                 </div>
                 <nav>

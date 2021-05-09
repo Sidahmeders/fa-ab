@@ -1,6 +1,6 @@
 import Meta from '../components/Meta'
 
-const about = () => {
+export default function about() {
     return (
         <div>
             <Meta title="About Us" />
@@ -8,5 +8,3 @@ const about = () => {
         </div>
     )
 }
-
-export default about
