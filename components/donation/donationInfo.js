@@ -13,7 +13,7 @@ export default function DonationInfo() {
         { amount: 50 },
         { amount: 100 },
         { amount: 1000 },
-        { amount: 'others' }
+        { amount: 'other' }
     ])
 
     const [donationMethodButtons, setDonationMethodButtons] = useState([
@@ -109,7 +109,7 @@ export default function DonationInfo() {
             <div className={styles.amounts_container}>
                 <div className={styles.amount_btn}>
                     {donationAmountbuttons.map((btn, index) =>
-                        btn.amount === 'others' ? (
+                        btn.amount === 'other' ? (
                             <button
                                 key={index}
                                 className={styles[btn.style]}

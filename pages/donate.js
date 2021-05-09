@@ -1,14 +1,10 @@
 import Stripe from 'stripe'
 import { parseCookies, setCookie } from 'nookies'
-import { loadStripe } from '@stripe/stripe-js'
-import { Elements } from '@stripe/react-stripe-js'
-
 import DonationInfo from '../components/donation/donationInfo'
 import DonorInfo from '../components/donation/donorInfo'
 import PaymentInfo from '../components/donation/paymentInfo'
+import CheckoutElement from '../components/donation/checkoutForm'
 
-import CheckoutForm from '../components/donation/checkoutForm'
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY)
 const MONEY_AMOUNT = 25
 
 export default function DonationPage({ paymentIntent }) {
@@ -17,9 +13,7 @@ export default function DonationPage({ paymentIntent }) {
             <DonationInfo />
             <DonorInfo />
             <PaymentInfo />
-            <Elements stripe={stripePromise}>
-                <CheckoutForm paymentIntent={paymentIntent} />
-            </Elements>
+            <CheckoutElement paymentIntent={paymentIntent} />
         </div>
     )
 }

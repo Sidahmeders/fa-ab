@@ -1,28 +1,31 @@
 import React, { useState } from 'react'
-import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js'
+import { CardElement, useStripe, useElements, Elements } from '@stripe/react-stripe-js'
 import { destroyCookie } from 'nookies'
 import styles from '../../styles/donation/checkoutForm.module.scss'
+import { loadStripe } from '@stripe/stripe-js'
 
-const CheckoutForm = ({ paymentIntent }) => {
-    const createOptions = () => {
-        return {
-            style: {
-                base: {
-                    fontSize: '16px',
-                    color: '#424770',
-                    '::placeholder': {
-                        color: '#aab7c4'
-                    }
-                },
-                invalid: {
-                    color: '#9e2146'
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY)
+const createOptions = () => {
+    return {
+        style: {
+            base: {
+                fontSize: '16px',
+                color: '#424770',
+                '::placeholder': {
+                    color: '#aab7c4'
                 }
+            },
+            invalid: {
+                color: '#9e2146'
             }
         }
     }
+}
 
+const CheckoutForm = ({ paymentIntent }) => {
     const stripe = useStripe()
     const elements = useElements()
+
     const [checkoutError, setCheckoutError] = useState()
     const [checkoutSuccess, setCheckoutSuccess] = useState()
 
@@ -32,51 +35,62 @@ const CheckoutForm = ({ paymentIntent }) => {
         if (!stripe || !elements) {
             // Stripe.js has not loaded yet. Make sure to disable
             // form submission until Stripe.js has loaded.
-            return
+            return <div>loading..</div>
         }
 
         try {
-            const {
-                error,
-                paymentIntent: { status }
-            } = await stripe.confirmCardPayment(paymentIntent.client_secret, {
+            const payment = await stripe.confirmCardPayment(paymentIntent.client_secret, {
                 payment_method: {
                     card: elements.getElement(CardElement)
                 }
             })
 
-            if (error) {
-                throw new Error(error.message)
+            if (payment.error) {
+                throw new Error(payment.error.message)
             }
 
-            if (status === 'succeeded') {
+            if (payment.paymentIntent.status === 'succeeded') {
+                console.log(paymentIntent)
                 setCheckoutSuccess(true)
                 destroyCookie(null, 'paymentIntentId')
             }
         } catch (err) {
-            alert(err.message)
             setCheckoutError(err.message)
         }
     }
 
     if (checkoutSuccess) {
-        return <p>Payment successful! means money gone</p>
+        return (
+            <div className={styles.success_container}>
+                <span>Payment successful! thanks for donation</span>{' '}
+            </div>
+        )
     }
 
     return (
         <div className={styles.cardsection}>
             <form onSubmit={handleSubmit}>
+                <div className={checkoutError ? styles.error_container : ''}>
+                    {checkoutError && <span>{checkoutError}</span>}
+                </div>
                 <label>
                     Card Details
                     <CardElement options={createOptions()} className={styles.StripeElement} />
                 </label>
                 <button className={styles.button} type="submit" disabled={!stripe}>
-                    Donate now
+                    Confirm Donation
                 </button>
-                {checkoutError && <span style={{ color: 'red' }}>{checkoutError}</span>}
             </form>
         </div>
     )
 }
 
-export default CheckoutForm
+const CheckoutElement = ({ paymentIntent }) => {
+    return (
+        <Elements stripe={stripePromise}>
+            <CheckoutForm paymentIntent={paymentIntent} />
+        </Elements>
+    )
+}
+
+export default CheckoutElement
