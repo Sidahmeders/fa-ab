@@ -4,11 +4,11 @@ import DonationInfo from '../components/donation/donationInfo'
 import DonorInfo from '../components/donation/donorInfo'
 import PaymentInfo from '../components/donation/paymentInfo'
 import CheckoutElement from '../components/donation/checkoutForm'
-import { ContextConsumer } from './_context'
+import { ContextConsumer } from '../_context'
 import { useContext } from 'react'
 import { useRouter } from 'next/router'
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
+const stripe = new Stripe('sk_test_Zqb7pWuP7ayQsn2rLtKlXIRW00BZfCtYXy', {
     apiVersion: '2020-08-27'
 })
 
@@ -27,12 +27,10 @@ export default function DonationPage({ paymentIntent }) {
             }
         })
 
-        let MONEY_AMOUNT = customerData.donationAmount
-
         router.push(
             {
                 pathname: '/donate',
-                query: { name: 'Ahmed', MONEY_AMOUNT: MONEY_AMOUNT }
+                query: { name: 'Ahmed', MONEY_AMOUNT: customerData.donationAmount }
             },
             undefined,
             { shallow: true }

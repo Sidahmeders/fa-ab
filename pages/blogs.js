@@ -4,7 +4,7 @@ import { RichText } from 'prismic-reactjs'
 import Link from 'next/link'
 import styles from '../styles/Prismic.module.scss'
 import { useState, useEffect } from 'react'
-import { ContextConsumer } from './_context'
+import { ContextConsumer } from '../_context'
 import { useContext } from 'react'
 
 let pageSizeNumber = 4

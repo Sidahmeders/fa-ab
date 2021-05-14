@@ -4,7 +4,7 @@ import { destroyCookie } from 'nookies'
 import styles from '../../styles/donation/checkoutForm.module.scss'
 import { loadStripe } from '@stripe/stripe-js'
 
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY)
+const stripePromise = loadStripe('pk_test_CMCXgPpoZEsrGyGpR7XdKnLL00eUaQ4SFc')
 const createOptions = () => {
     return {
         style: {

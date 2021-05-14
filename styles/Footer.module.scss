@@ -8,41 +8,41 @@
     flex-direction: row;
 }
 .foot {
-    background: $back-col;
+    background: white;
     width: 33.33%;
     padding: 3%;
 }
 .foot h3 {
     font-size: x-large;
-    background: $back-col;
-    color: $prime-col;
+    background: white;
+    color: #333;
     border-radius: 3%;
     text-align: left;
     margin: 20px 0 0 25px;
 }
 .foot p {
     text-align: left;
-    background: $back-col;
-    color: $prime-col;
+    background: white;
+    color: #333;
     padding: 5% 2%;
     border-radius: 3%;
 }
 .foot li a {
     text-decoration: none;
-    color: $prime-col;
-    background: $back-col;
+    color: #333;
+    background: white;
     padding: 3px 6px;
     border-radius: 2px;
     transition: $ease;
 }
 .foot li a:hover {
-    color: $back-col;
-    background: $prime-col;
+    color: white;
+    background: #333;
     font-weight: bold;
 }
 .foot .ul,
 .li {
-    background: $back-col;
+    background: white;
     padding-top: 3%;
     padding-bottom: 3%;
     list-style: none;

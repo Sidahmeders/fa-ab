@@ -1,4 +1,4 @@
-import { ContextProvider } from './_context'
+import { ContextProvider } from '../_context'
 import Layout from '../components/Layout'
 import '../styles/globals.css'
 

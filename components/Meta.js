@@ -16,9 +16,9 @@ function Meta({ title, keywords, description }) {
 }
 
 Meta.defaultProps = {
-    title: 'web development',
-    keywords: 'web dev, programming, hacking',
-    description: 'Get the latest news about web development'
+    title: 'Father Abaraham Non Profit',
+    keywords: 'organization, non profit, donations, charity, philanthropy',
+    description: 'Get the latest news about our non profit organization'
 }
 
 export default Meta
